@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Potato Soup</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {
+	background-color: #FFC;
+}
+</style>
+</head>
+
+<body>
+<center><h1>Potato Soup</h1></center>
+<hr>
+
+<input type="checkbox" onClick="dx();" id="LC"> Low Carb<br>
+<input type="checkbox" onClick="dx();" id="VG"> Vegetarian<br>
+
+<p><img id="Img" src="0.png" width="480" height="300" alt="Image"></p>
+<u>Ingredients:</u><br>
+Vegetable broth<br>
+Russet Potatoes<br>
+White Onion<br>
+Carrots<br>
+Celery<br>
+Chives<br>
+<script> 
+function dx(){location.reload();};
+function fx(){
+      if((document.getElementById("LC").checked == true) && (document.getElementById("VG").checked == true))
+		{
+		document.getElementById("Img").src = "3.png";
+		document.write("Rosemary sprig <br> Shallot <br> White pepper <br> Salt <br>");
+		}
+		
+      if((document.getElementById("LC").checked == true) && (document.getElementById("VG").checked == false))
+		{
+		document.getElementById("Img").src = "2.png";
+		document.write("Kayle <br> Scallion <br> White pepper <br>");
+		}
+		
+      if((document.getElementById("LC").checked == false) && (document.getElementById("VG").checked == true))
+		{
+		document.getElementById("Img").src = "1.png";
+		document.write("Heavy Cream <br> Scallion <br> Black pepper <br> Salt <br>");
+		}
+		
+      if((document.getElementById("LC").checked == false) && (document.getElementById("VG").checked == false))
+		{
+		document.getElementById("Img").src = "0.png";
+		document.write("Bacon <br> Heavy Cream <br> Sharp Cheddar Cheese<br> Black pepper <br>	");
+		}
+}
+fx();
+</script>
+<br>
+<u>Preparation:</u><br>
+Bring water to a boil; peel potatoes and diced potatoes. Prep vegetables. Add potatoes and reduce to a summer. Add remaining ingreadents and cover.
+</body>
+</html>
