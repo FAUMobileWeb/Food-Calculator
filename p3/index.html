@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang=en manifest="manifest.appcache">
+
+<head>
+  <title>Thyroid Cancer Aide</title>
+
+  <!--Adjusting the page on mobile screen  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"
+  />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <script src="scripts/food_calculation.js"></script>
+  <script src="scripts/jquery-1.9.1.min.js"></script>
+  <script src="scripts/chromeFileProtocolFix.js"></script>
+  <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
+    <script src="scripts/BMR.js"></script>
+</head>
+
+<body>
+  <!-- Start of first page -->
+  <div data-role="page" id="pageHome">
+    <div data-role="header">
+      <h1>Thyroid Cancer Aide</h1>
+    </div>
+    <div data-role="content">
+      Password :
+      <input type="password" id="passcode"></input>
+
+      <div data-role="controlgroup" id="numKeyPad">
+        <a data-role="button" id="btnEnter" type="submit">Enter</a>
+        <a href="#pageAbout" data-role="button">About</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(7)">7</a>
+        <a data-role="button" onclick="addValueToPassword(8)">8</a>
+        <a data-role="button" onclick="addValueToPassword(9)">9</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(4)">4</a>
+        <a data-role="button" onclick="addValueToPassword(5)">5</a>
+        <a data-role="button" onclick="addValueToPassword(6)">6</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(1)">1</a>
+        <a data-role="button" onclick="addValueToPassword(2)">2</a>
+        <a data-role="button" onclick="addValueToPassword(3)">3</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(0)">0</a>
+        <a data-role="button" onclick="addValueToPassword('bksp')"
+        data-icon="delete">del</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Calculator Page-->  
+<div data-role="page" id="pageone">
+  <div data-role="header">
+   <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+<div>
+    <a href="#potatosoup"><img  src='img/food-03.jpg'  height="300" width="300" style="margin:0px auto;display:block"></a>
+  </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>Welcome! If you click on the link below, it will shou you how much carlories it provided.</p>
+    <a href="#pagetwo" data-role="button">Go to Customize Food Page</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Food Calculator</h1>
+  </div>
+</div>
+
+<div data-role="page" data-dialog="true" id="pagetwo">
+  <div data-role="header">
+    <h1>Customize Food Page</h1>
+    <div>
+        <img src='img/food-03.jpg'  height="300" width="300"  style="margin:0px auto;display:block">
+      </div>
+  </div>
+
+ <div data-role="main" class="ui-content">
+    <p>Choose the food and weight</p>
+    <div data-role="content">
+      <select id="sitem1">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+</select>
+
+      <input type='number' name='item1' id='item1'>
+        
+      <select id="sitem2">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+  </select>
+
+      <input type='number' name='item2' id='item2'>
+        
+      <select id="sitem3">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+  </select>
+      <input type='number' name='item3' id='item3' >
+      <select id="sitem4">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+</select>
+
+      <input type='number' name='item4' id='item4' >
+      <select id=" sitem5">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+</select>
+
+      <input type='number' name='item5' id='item5' >
+      <select id="sitem6">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+</select>
+
+      <input type='number' name='item6' id='item6' >
+      <select id="sitem7">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+  </select>
+
+      <input type='number' name='item7' id='item7' >
+      <select id="sitem8">
+          <option></option>
+  <option id="apple"value="apple">Apple</option>
+  <option id="bage1"value="bagel">Bagel</option>
+  <option id="banana"value="banana">Banana</option>
+  <option id="beer"value="beer">Beer</option>
+  <option id="bread"value="bread">Bread</option>
+  <option id="carrots"value="carrots">Carrots</option>
+  <option id="chesse"value="cheese">Cheddar cheese</option>
+  <option id="chicke"value="chicken">Chicken Breast</option>
+</select>
+      <input type='number' name='item8' id='item8'>
+      <br/>
+        <button onclick="update()">Calculate!</button>
+        <br/>
+		<div data-role="footer">
+    <h1 href="#pageone">Homepage</h1>
+  </div>
+  <table id="data">
+         <tr>
+           <td>Total Carlories:</td>
+           <td id="result">0</td>
+           <td>cal</td>
+         </tr>
+       </table>
+    </div>
+  </div>
+  </div>
+  
+  <!--Disclaimer Page -->
+  <div data-role="page" id="legalNotice" data-close-btn="none">
+    <div data-role="header">
+      <h1>Disclaimer</h1>
+    </div>
+    <div data-role="content">
+      [Insert Disclaimer Text Here]
+      <br>
+      <a href="#pageUserInfo" id="noticeYes" data-role="button"
+      data-icon="forward" data-mini="false">Yes</a>
+    </div>
+  </div>
+
+  <!--About Page -->
+  <div data-role="page" id="pageAbout">
+    <div data-role="header">
+      <a href="#pageHome" data-role="button" data-icon="bars"
+      data-iconpos="left">Home</a>
+      <h1>Info</h1>
+    </div>
+    <div data-role="content">
+      [Help and/or Website explanation/information should
+      go here]
+    </div>
+  </div>
+
+  <!--User Information Page/Form -->
+  <div data-role="page" id="pageUserInfo">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>User Information</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <form id="frmUserForm" action="">
+        <div data-role="fieldcontain">
+          <label for="txtFirstName">First Name: </label>
+          <input type="text" placeholder="First Name" name="txtFirstName"
+          data-mini="false" id="txtFirstName" value=""
+          required>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="txtLastName">Last Name: </label>
+          <input type="text" placeholder="Last Name" name="txtLastName"
+          data-mini="false" id="txtLastName" value=""
+          required>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="datBirthdate">Birthdate: </label>
+          <input type="date" name="datBirthdate" data-mini="false"
+          id="datBirthdate" value="" required>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="changePassword">Edit Password: </label>
+          <input type="password" placeholder="New Password" name="changePassword"
+          data-mini="false" id="changePassword" value=""
+          required>
+        </div>
+        <div data-role="fieldcontain">
+          <label for="txtHealthCardNumber">Health Card Number: </label>
+          <input type="text" placeholder="Health Card Number"
+          name="txtHealthCardNumber" data-mini="false"
+          id="txtHealthCardNumber" value="" required>
+        </div>
+        <input type="submit" id="btnUserUpdate" data-icon="check"
+        data-iconpos="left" value="Update" data-inline="true">
+      </form>
+    </div>
+  </div>
+
+  <!-- Menu page -->
+  <div data-role="page" id="pageMenu">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>Food Calc</h1>
+    </div>
+    <div data-role="content">
+      <div data-role="controlgroup">
+        <a href="#pageMBR" data-role="button">Basal Metabolic Rate </a>
+        <a href="#pageone" data-role="button">Carlories Calculator</a>
+        <a href="#pageRecords" data-role="button">Records</a>
+        <a href="#pageAdvice" data-role="button">Suggestions</a>
+          
+      </div>
+    </div>
+  </div>
+<!--MBR-->
+
+  <div data-role="page" id="pageMBR">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+<br />
+<div data-role="content">
+    <meta charset="utf-8">
+<div><br>
+    <br> <form action="">
+    Male<input type="radio" name="colors" id="male" checked = "true"><br>
+    Female<input type="radio" name="colors" id="female">
+</form>
+   <br><bR></div>
+
+
+<input id="value1" type="text" /><span> Age </span><br>
+<input id="value2" type="text" /><span> Height </span><br>
+<input id="value3" type="text" /><span> Weight </span><br>
+<span> Your daily exercise?</span><br>
+<span>Less<--------->More</span><br>
+<input type="range" id="myRange" min="1" max="1.85" step=".025"  />
+<br>
+<br>
+<input type="submit" onclick="output();">
+
+<br>
+<br>
+
+<p id="result123">Your Caloric inTake should be: </p>
+
+
+<!--
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+//(10 * weight(kg)) + (6.25 * height(cm)) - 5 * (age(y)) 
+
+function output(){
+var x = document.getElementById("myRange").value;
+//document.getElementById("demo").innerHTML = x;
+var value1 = document.getElementById('value1').value;
+var value2 = document.getElementById('value2').value;
+var value3 = document.getElementById('value3').value;
+ if (document.getElementById("female").checked == true)
+ {
+ var mod =-61;
+ }
+ else
+ {
+ var mod =5;
+ }
+
+document.getElementById('result').innerHTML = "Your Caloric inTake should be: " + Math.round(x*((10 * parseInt(value3)* 0.453592) + (6.25* parseInt(value2)*30.48)-(5*parseInt(value1))+mod));
+}
+</script>
+    -->
+
+</div>
+
+
+  <!-- Records page -->
+  <div data-role="page" id="pageRecords">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>Records</h1>
+    </div>
+    <div data-role="content">
+      <!-- User's Information Section -->
+      <div data-role="fieldcontain" id="divUserSection">
+      </div>
+      <h3 align="center">History</h3>
+      <div data-role="fieldcontain">
+        <!-- Records Table -->
+        <table id="tblRecords" class="ui-responsive table-stroke">
+        </table>
+      </div>
+      <div data-role="fieldcontain">
+        <a href="#pageNewRecordForm" id="btnAddRecord" data-role="button"
+        data-icon="plus">Add New Entry</a>
+        <a href="#" data-role="button" id="btnClearHistory"
+        data-icon="delete">Clear History</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Record Form page -->
+  <div data-role="page" id="pageNewRecordForm">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>New Record</h1>
+    </div>
+    <div data-role="content">
+      <form id="frmNewRecordForm" action="">
+        <div data-role="fieldcontain">
+          <div data-role="fieldcontain">
+            <label for="datExamDate">Date: </label>
+            <input type="date" name="datExamDate" data-mini="false"
+            id="datExamDate" value="">
+          </div>
+          <div data-role="fieldcontain">
+            <label for="txtTSH"><abbr title="Thyroid-stimulating hormone">Calories : </abbr>
+            </label>
+            <input type="number" step="0.01" placeholder="0" name="txtTSH"
+            data-mini="false" id="txtTSH" value="">
+          </div>
+          
+        </div>
+        <input type="submit" id="btnSubmitRecord" value="">
+      </form>
+    </div>
+    <p>&nbsp;&nbsp;100 microgram = .0001 gram</p>
+  </div>
+
+
+  <!--Graph Page -->
+  <div data-role="page" id="pageGraph" class="test">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>Analyze</h1>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">TSH vs Date</h3>
+      </div>
+      <div class="panel-body">
+        <canvas id="GraphCanvas" width="500" height="500" style="border:1px solid #000000;">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <!--Advice Page -->
+  <div data-role="page" id="pageAdvice">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <a href="#pageAbout" data-role="button" data-icon="info"
+      data-iconpos="right" data-inline="true">Info</a>
+      <h1>Suggestions</h1>
+    </div>
+    <div data-role="content">
+      <canvas id="AdviceCanvas" width="550" height="550"
+      style="border:1px solid #000000;">
+      </canvas>
+    </div>
+  </div>
+
+  <!--Custom Javascript/Jquery -->
+  <script src="scripts/RGraph.common.core.js"></script>
+  <script src="scripts/RGraph.common.effects.js"></script>
+  <script src="scripts/RGraph.line.js"></script>
+  <script src="scripts/RGraph.cornergauge.js"></script>
+  <script src="scripts/RGraph.hprogress.js"></script>
+
+  <script src="scripts/UserForm.js"></script>
+  <script src="scripts/Table.js"></script>
+  <script src="scripts/Navigation.js"></script>
+  <script src="scripts/Advice.js"></script>
+  <script src="scripts/GraphAnimate.js"></script>
+  <script src="scripts/pageLoader.js"></script>
+</body>
+
+</html>
